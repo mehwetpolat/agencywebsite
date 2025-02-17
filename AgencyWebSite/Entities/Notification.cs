@@ -5,10 +5,12 @@ using System.Web;
 
 namespace AgencyWebSite.Entities
 {
-    public class Team
+    public class Notification
     {
-        public int TeamId { get; set; }
+        public int NotificationId { get; set; }
         public string NameSurname { get; set; }
+        public string Description { get; set; }
         public string ImageUrl { get; set; }
+
     }
 }
