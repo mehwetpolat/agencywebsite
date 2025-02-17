@@ -1,0 +1,50 @@
+﻿@model List<AgencyWebSite.Entities.Service>
+@{
+    ViewBag.Title = "ServiceList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hizmetler Sayfası</h4>
+            <p class="card-description">
+                Hizmetler ile ilgili işlemleri buradan yapabilirsiniz
+            </p>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Hizmet Adı</th>
+                            <th>Hizmet Resmi</th>
+                            <th>Açıklaması</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@count</td>
+                                <td>@item.ServiceTitle</td>
+                                <td><img src="@item.ServiceImageUrl" style="width:75px; height:75px" alt="Hizmet Görseli" /></td>
+                                <td>@item.ServiceDescription</td>
+                                <td><a class="btn btn-danger" href="/Service/DeleteService/@item.ServiceId"><i class="fa fa-trash"></i>Sil</a></td>
+                                <td><a class="btn btn-success" href="/Service/UpdateService/@item.ServiceId"><i class="fa fa-pencil">Güncelle</i></a></td>
+                            </tr>
+                            count++;
+                        }
+                    </tbody>
+                </table>
+                <br />
+                <a href="/Service/CreateService" class="btn btn-info"><i class="mdi mdi-file-check btn-icon-append">Servis Oluştur</i></a>
+            </div>
+        </div>
+    </div>
+</div>
