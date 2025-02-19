@@ -1,29 +1,28 @@
-﻿@model AgencyWebSite.Entities.About
+﻿@model AgencyWebSite.Entities.Feature
 @{
-    ViewBag.Title = "CreateAbout";
+    ViewBag.Title = "CreateFeature";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-
 
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Hakkında Ekleme Sayfası</h4>
-            <p class="card-description">Hakkında ekleme işlemlerini buradan yapabilirsiniz.</p>
+            <h4 class="card-title">Feature Ekleme Sayfası</h4>
+            <p class="card-description">Feature ekleme işlemlerini buradan yapabilirsiniz.</p>
             <form class="forms-sample" method="post">
 
                 <div class="form-group">
-                    <label for="exampleInputName1">Hakkımda Başlığı</label>
+                    <label for="exampleInputName1">Feature Başlığı</label>
                     <input type="text"
                            class="form-control"
                            id="exampleInputName1"
-                           placeholder="hakkında Adı"
-                           name="AboutTitle" />
+                           placeholder="Feature Adı"
+                           name="FeatureTitle" />
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputName1">Hakkımda Açıklaması</label>
-                    <textarea rows="4" class="form-control" name="AboutDescription"></textarea>
+                    <label for="exampleInputName1">Feature Açıklaması</label>
+                    <textarea rows="4" class="form-control" name="FeatureDescription"></textarea>
                 </div>
 
                 <div class="form-group">
@@ -31,8 +30,8 @@
                     <input type="text"
                            class="form-control"
                            id="exampleInputName1"
-                           placeholder="Hakkında Resim Yolu"
-                           name="AboutImageUrl" />
+                           placeholder="Feature Resim Yolu"
+                           name="FeatureImageUrl" />
                 </div>
 
                 <button type="submit" class="btn btn-primary mr-2">Kaydet</button>

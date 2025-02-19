@@ -1,0 +1,38 @@
+﻿@model AgencyWebSite.Entities.Feature
+@{
+    ViewBag.Title = "UpdateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Feature Güncelleme Sayfası</h4>
+            <p class="card-description">Feature güncelleme işlemlerini buradan yapabilirsiniz.</p>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label>Feature Id</label>
+                    @Html.TextBoxFor(x => x.FeatureId, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Hakkında Başlığı</label>
+                    @Html.TextBoxFor(x => x.FeatureTitle, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleTextarea1">Hakkında Açıklaması</label>
+                    <textarea class="form-control"
+                              id="exampleTextarea1"
+                              rows="4"
+                              name="FeatureDescription">@Model.FeatureDescription</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Resim Yolu</label>
+                    @Html.TextBoxFor(x => x.FeatureImageUrl, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <button type="reset" class="btn btn-light">Vazgeç</button>
+            </form>
+        </div>
+    </div>
+</div>
