@@ -1,0 +1,38 @@
+﻿@model AgencyWebSite.Entities.About
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hakkında Güncelleme Sayfası</h4>
+            <p class="card-description">Hakkında güncelleme işlemlerini buradan yapabilirsiniz.</p>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label>Hakkında Id</label>
+                    @Html.TextBoxFor(x => x.AboutId, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Hakkında Başlığı</label>
+                    @Html.TextBoxFor(x => x.AboutTitle, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Resim Yolu</label>
+                    @Html.TextBoxFor(x => x.AboutImageUrl, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">Hakkında Açıklaması</label>
+                    <textarea class="form-control"
+                              id="exampleTextarea1"
+                              rows="4"
+                              name="AboutDescription">@Model.AboutDescription</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <button type="reset" class="btn btn-light">Vazgeç</button>
+            </form>
+        </div>
+    </div>
+</div>
