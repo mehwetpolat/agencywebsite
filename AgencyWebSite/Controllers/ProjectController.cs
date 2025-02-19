@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
@@ -16,14 +17,15 @@ namespace AgencyWebSite.Controllers
         AgencyContext agContext = new AgencyContext();
         public ActionResult ProjectList(string searchText)
         {
+            // arama listesi
             List<Project> values = new List<Project>();
             if(!string.IsNullOrEmpty(searchText))
             {
                 values = agContext.Projects.Where(x => x.ProjectTitle.Contains(searchText)).ToList();
                 return View(values);
             }
-            var value = agContext.Projects.ToList();
-            return View(value);
+            values = agContext.Projects.ToList();
+            return View(values);
         }
 
         [HttpGet]
@@ -44,6 +46,52 @@ namespace AgencyWebSite.Controllers
         public ActionResult CreateProject(Project project)
         {
             agContext.Projects.Add(project);
+            agContext.SaveChanges();
+
+            return RedirectToAction("ProjectList");
+        }
+
+        public ActionResult DeleteProject(int id)
+        {
+            var value = agContext.Projects.Find(id);
+            agContext.Projects.Remove(value);
+            agContext.SaveChanges();
+            return RedirectToAction("ProjectList");
+        }
+
+        [HttpGet]
+        public ActionResult UpdateProject(int id)
+        {
+            List<SelectListItem> value = (from x in agContext.Categories.ToList()
+                                            select new SelectListItem
+                                            {
+                                                Text = x.CategoryName,
+                                                Value = x.CategoryId.ToString()
+                                            }).ToList();
+            ViewBag.cat = value;
+
+            var values = agContext.Projects.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateProject(Project project)
+        {
+            if (project == null || project.ProjectId == 0)
+            {
+                return HttpNotFound("Güncellenecek proje bulunamadı.");
+            }
+
+            var value = agContext.Projects.Find(project.ProjectId);
+
+            if (value == null)
+            {
+                return HttpNotFound($"ID {project.ProjectId} ile eşleşen proje bulunamadı.");
+            }
+
+            value.ProjectTitle = project.ProjectTitle;
+            value.ProjectImageUrl = project.ProjectImageUrl;
+            value.CategoryId = project.CategoryId;
+
             agContext.SaveChanges();
 
             return RedirectToAction("ProjectList");

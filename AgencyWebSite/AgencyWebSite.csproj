@@ -2195,6 +2195,9 @@
     <Content Include="Templates\login-form-15\login-form-15\scss\bootstrap\_variables.scss" />
     <Content Include="Templates\login-form-15\login-form-15\scss\style.scss" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
+    <Content Include="Views\AdminLayout\FooterPartial.cshtml" />
+    <Content Include="Views\AdminLayout\JsPartial.cshtml" />
+    <Content Include="Views\Project\UpdateProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

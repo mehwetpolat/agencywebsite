@@ -21,16 +21,14 @@ namespace AgencyWebSite.Controllers
         [HttpPost]
         public ActionResult AdminLogin(Admin admin)
         {
-            var result = agContext.Admins.FirstOrDefault(
-                x => x.UserName == admin.UserName &&
-                x.Password == admin.Password);
-
+            var result = agContext.Admins.FirstOrDefault(x => x.UserName == admin.UserName && x.Password == admin.Password);
             if (result != null)
             {
                 FormsAuthentication.SetAuthCookie(admin.UserName, true);
                 Session["username"] = result.UserName;
-                return RedirectToAction("ProjectList" , "Project");
+                return RedirectToAction("ProjectList", "Project");
             }
+
             return View();
         }
 

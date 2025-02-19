@@ -8,6 +8,7 @@ using AgencyWebSite.Entities;
 
 namespace AgencyWebSite.Controllers
 {
+    [Authorize]
     public class AdminLayoutController : Controller
     {
         AgencyContext context = new AgencyContext();
@@ -20,20 +21,27 @@ namespace AgencyWebSite.Controllers
 
         public ActionResult HeadPartial()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult SidebarPartial()
         {
-            return View();
+            var userName = Session["username"];
+            var nameSurname = context.Admins
+                .Where(x => x.UserName == userName)
+                .Select(x => x.Name + " " + x.Surname)
+                .FirstOrDefault();
+            ViewBag.profile = nameSurname;
+            return PartialView();
         }
 
         public ActionResult NavbarPartial()
         {
             var userName = Session["username"];
-            var nameSurname = context.Admins.Where(x => x.UserName == userName).Select(x => x.Name + " " + x.Surname).FirstOrDefault();
-            ViewBag.profile = nameSurname;           
-            return View();
+            var nameSurname = context.Admins.Where(x => x.UserName == userName).Select
+                (x => x.Name + " " + x.Surname).FirstOrDefault();
+            ViewBag.profile = nameSurname;
+            return PartialView();
         }
 
         public ActionResult NotificationPartial()
@@ -42,5 +50,14 @@ namespace AgencyWebSite.Controllers
             return PartialView(values);
         }
         
+        public ActionResult FooterPartial()
+        {
+            return PartialView();
+        }
+
+        public ActionResult JsPartial()
+        {
+            return PartialView();
+        }
     }
 }
