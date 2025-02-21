@@ -21,7 +21,7 @@ namespace AgencyWebSite.Controllers
             List<Project> values = new List<Project>();
             if(!string.IsNullOrEmpty(searchText))
             {
-                values = agContext.Projects.Where(x => x.ProjectTitle.Contains(searchText)).ToList();
+                values = agContext.Projects.Where(value => value.ProjectTitle.Contains(searchText)).ToList();
                 return View(values);
             }
             values = agContext.Projects.ToList();
@@ -76,17 +76,7 @@ namespace AgencyWebSite.Controllers
         [HttpPost]
         public ActionResult UpdateProject(Project project)
         {
-            if (project == null || project.ProjectId == 0)
-            {
-                return HttpNotFound("Güncellenecek proje bulunamadı.");
-            }
-
             var value = agContext.Projects.Find(project.ProjectId);
-
-            if (value == null)
-            {
-                return HttpNotFound($"ID {project.ProjectId} ile eşleşen proje bulunamadı.");
-            }
 
             value.ProjectTitle = project.ProjectTitle;
             value.ProjectImageUrl = project.ProjectImageUrl;

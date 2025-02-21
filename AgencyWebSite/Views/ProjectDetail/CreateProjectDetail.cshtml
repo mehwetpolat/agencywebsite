@@ -1,0 +1,42 @@
+﻿@model AgencyWebSite.Entities.ProjectDetail
+@{
+    ViewBag.Title = "CreateProjectDetail";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Proje Detay Ekleme Sayfası</h4>
+            <p class="card-description">Proje Detay ekleme işlemlerini buradan yapabilirsiniz.</p>
+            <form class="forms-sample" method="post">
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Detay Başlığı</label>
+                    <input type="text"
+                           class="form-control"
+                           id="exampleInputName1"
+                           placeholder="Proje Detay Adı"
+                           name="ProjectDetailTitle" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Proje Açıklaması</label>
+                    <input type="text"
+                           class="form-control"
+                           id="exampleInputName1"
+                           placeholder="Detay Açıklaması"
+                           name="ProjectDetailDescription" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputName3">Proje Kategorisi</label>
+                    @Html.DropDownListFor(x => x.ProjectId, (List<SelectListItem>)ViewBag.v, new { @class = "table table-bordered" })
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                <button type="reset" class="btn btn-light">Vazgeç</button>
+            </form>
+        </div>
+    </div>
+</div>

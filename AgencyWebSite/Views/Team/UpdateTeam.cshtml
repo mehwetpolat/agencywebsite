@@ -1,0 +1,31 @@
+﻿@model AgencyWebSite.Entities.Team
+@{
+    ViewBag.Title = "UpdateTeam";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Personel Güncelleme Sayfası</h4>
+            <p class="card-description">Proje güncelleme işlemlerini buradan yapabilirsiniz.</p>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label>Personel Id</label>
+                    @Html.TextBoxFor(x => x.TeamId, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Personel Adı</label>
+                    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Personel Resim Yolu</label>
+                    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <button type="reset" class="btn btn-light">Vazgeç</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@model AgencyWebSite.Entities.Category
+@{
+    ViewBag.Title = "CreateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Kategori Ekleme Sayfası</h4>
+            <p class="card-description">Kategori ekleme işlemlerini buradan yapabilirsiniz.</p>
+            <form class="forms-sample" method="post">
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Kategori Adı</label>
+                    <input type="text"
+                           class="form-control"
+                           id="exampleInputName1"
+                           placeholder="Kategori Adı"
+                           name="CategoryName" />
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                <button type="reset" class="btn btn-light">Vazgeç</button>
+            </form>
+        </div>
+    </div>
+</div>

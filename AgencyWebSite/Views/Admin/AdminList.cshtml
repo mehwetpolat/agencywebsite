@@ -1,0 +1,64 @@
+﻿@model List<AgencyWebSite.Entities.Admin>
+@{
+    ViewBag.Title = "AdminList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    var count = 0;
+}
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Adminler Sayfası</h4>
+
+            <p class="card-description">
+                Adminler ile ilgili işlemleri buradan yapabilirsiniz
+            </p>
+
+            <form method="get">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Aranacak Kelime" aria-label="Aranacak Kelime" aria-describedby="basic-addon2" name="searchText" />
+                        <div class="input-group-append">
+                            <button class="btn btn-sm btn-primary" type="button">Arama</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Kullanıcı Adı</th>
+                            <th>Şifre</th>
+                            <th>Adminin Adı</th>
+                            <th>Adminin Soyadı</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@count</td>
+                                <td>@item.UserName</td>
+                                <td>@item.Password</td>
+                                <td>@item.Name</td>
+                                <td>@item.Surname</td>
+                                <td><a class="btn btn-danger" href="/Admin/DeleteAdmin/@item.AdminId"><i class="fa fa-trash"></i>Admin'i Sil</a></td>
+                                <td><a class="btn btn-success" href="/Admin/UpdateAdmin/@item.AdminId"><i class="fa fa-pencil">Güncelle</i></a></td>
+                            </tr>
+                            count++;
+                        }
+                    </tbody>
+                </table>
+                <br />
+                <a href="/Admin/CreateAdmin" class="btn btn-info"><i class="mdi mdi-file-check btn-icon-append">Admin Oluştur</i></a>
+            </div>
+        </div>
+    </div>
+</div>

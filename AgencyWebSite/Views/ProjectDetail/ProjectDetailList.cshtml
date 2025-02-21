@@ -1,0 +1,50 @@
+﻿@model List<AgencyWebSite.Entities.ProjectDetail>
+@{
+    ViewBag.Title = "ProjectDetailList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    var count = 0;
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Proje Detay Sayfası</h4>
+
+            <p class="card-description">
+                Proje Detay ile ilgili işlemleri buradan yapabilirsiniz
+            </p>
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Proje Açıklaması</th>
+                            <th>Proje Adı</th>
+                            <th>Proje Başlığı</th>
+                            <th>Güncelle</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@count</td>
+                                <td>@item.ProjectDetailDescription</td>
+                                <td>@item.Projects.ProjectTitle</td>
+                                <td>@item.ProjectDetailTitle</td>
+                                <td><a class="btn btn-danger" href="/ProjectDetail/DeleteProjectDetail/@item.ProjectDetailId"><i class="fa fa-trash"></i>Sil</a></td>
+                                <td><a class="btn btn-success" href="/ProjectDetail/UpdateProjectDetail/@item.ProjectDetailId"><i class="fa fa-pencil">Güncelle</i></a></td>
+                            </tr>
+                            count++;
+                        }
+                    </tbody>
+                </table>
+                <br />
+                <a href="/ProjectDetail/CreateProjectDetail" class="btn btn-info"><i class="mdi mdi-file-check btn-icon-append">Detay Oluştur</i></a>
+            </div>
+        </div>
+    </div>
+</div>
