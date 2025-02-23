@@ -1,0 +1,13 @@
+﻿@model List<AgencyWebSite.Entities.Feature>
+
+<header class="masthead">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="masthead-subheading">@item.FeatureTitle</div>
+            <div class="masthead-heading text-uppercase">@item.FeatureDescription</div>
+        }
+
+        <a class="btn btn-primary btn-xl" href="#services">Daha Fazlası İçin</a>
+    </div>
+</header>

@@ -1,4 +1,6 @@
 ﻿using AgencyWebSite.Context;
+using AgencyWebSite.Migrations;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,5 +54,63 @@ namespace AgencyWebSite.Controllers
             var values = agContext.ProjectDetails.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult MastheadPartial()
+        {
+            var value = agContext.Features.ToList();
+            return PartialView(value);
+        }
+
+        public PartialViewResult ServicePartial()
+        {
+            var values = agContext.Services.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult AboutPartial()
+        {
+            var values = agContext.Abouts.OrderByDescending(x =>x.AboutId).Take(6).ToList();
+            return PartialView(values);
+        }
+
+
+        public PartialViewResult TeamPartial()
+        {
+            var values = agContext.Teams.Include("SocialMedias").Include("Branch").Take(3).ToList();
+
+            return PartialView(values);
+        }
+
+        public PartialViewResult ContactPartial()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult ClientPartial()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult HeadPartial()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult FooterPartial()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult JsPartial()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult NavbarPartial()
+        {
+            return PartialView();
+        }
+
+       
     }
 }

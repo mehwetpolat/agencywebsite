@@ -1,0 +1,46 @@
+﻿@model List<AgencyWebSite.Entities.About>
+@{
+    var count = 2;
+}
+
+<section class="page-section" id="about">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Hakkımızda</h2>
+            <h3 class="section-subheading text-muted">Nereden Nereye.. İşte Bizim Hikayemiz</h3>
+        </div>
+        <ul class="timeline">
+            @foreach (var item in Model)
+            {
+                if (count % 2 == 0)
+                {
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle" src="@item.AboutImageUrl" width="160px" height="160px" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>@item.AboutDate</h4>
+                                <h4 class="subheading">@item.AboutTitle</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">@item.AboutDescription</p></div>
+                        </div>
+                    </li>
+                }
+
+                else
+                {
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle" src="@item.AboutImageUrl" width="160px" height="160px" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>@item.AboutDate</h4>
+                                <h4 class="subheading">@item.AboutTitle</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">@item.AboutDescription</p></div>
+                        </div>
+                    </li>
+                }
+                count++;
+            }
+        </ul>
+    </div>
+</section>
