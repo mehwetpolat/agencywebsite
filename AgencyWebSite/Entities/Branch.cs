@@ -9,5 +9,6 @@ namespace AgencyWebSite.Entities
     {
         public int BranchId { get; set; }
         public string BranchName { get; set; }
+        public List<Team> Teams { get; set; }
     }
 }

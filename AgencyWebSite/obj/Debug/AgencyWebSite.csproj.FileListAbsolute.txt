@@ -89,3 +89,9 @@ C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyW
 C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.projectandcategory_relation.resources
 C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.remove_registerytable.resources
 C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.adminmigupdate.resources
+C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.projectdb_detaildb_editrelation.resources
+C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.projectdb_detaildb_edited.resources
+C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.adminimageurl.resources
+C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.reamandbranchrelation.resources
+C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.teamandsocialmedia_relation.resources
+C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.socialmedia.resources

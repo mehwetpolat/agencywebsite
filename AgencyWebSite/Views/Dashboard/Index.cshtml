@@ -1,6 +1,8 @@
-﻿@{
+﻿@model List<AgencyWebSite.Entities.Team>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    
 }
 
 <div class="row">
@@ -141,8 +143,14 @@
             </div>
         </div>
     </div>
-
-
 </div>
 
+<p></p>
 
+@Html.Action("StaffData", "Dashboard")
+
+<p></p>
+
+@Html.Action("LastMessages", "Dashboard")
+
+@Html.Action("BusinessSurvey", "Dashboard")

@@ -1,21 +1,20 @@
 ﻿﻿<nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="text-center sidebar-brand-wrapper d-flex align-items-center">
-        <a class="sidebar-brand brand-logo" href="index.html"><img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/logo.svg" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini pl-4 pt-3" href="index.html"><img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/logo-mini.svg" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo" href=""><img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/logo.svg" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini pl-4 pt-3" href=""><img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/logo-mini.svg" alt="logo" /></a>
     </div>
     <ul class="nav">
         <li class="nav-item nav-profile">
             <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                    <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face1.jpg" alt="profile" />
+                    <img src="@ViewBag.profilePhoto" alt="profile" />
                     <span class="login-status online"></span>
                     <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column pr-3">
-                    <span class="font-weight-medium mb-2">@ViewBag.profile</span>
+                    <span class="font-weight-medium mb-2">@ViewBag.nameSurname</span>
                     <span class="font-weight-normal"></span>
                 </div>
-                <span class="badge badge-danger text-white ml-3 rounded">3</span>
             </a>
         </li>
         <li class="nav-item">
@@ -26,7 +25,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/Category/CategoryList">
-                <i class="mdi mdi-home menu-icon"></i>
+                <i class="mdi mdi-account-badge menu-icon"></i>
                 <span class="menu-title">Kategoriler</span>
             </a>
         </li>
@@ -51,30 +50,33 @@
         <li class="nav-item">
             <a class="nav-link" href="/Team/TeamList">
                 <i class="mdi mdi-table-large menu-icon"></i>
-                <span class="menu-title">-Personeller</span>
+                <span class="menu-title">Personeller</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/About/AboutList">
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <i class="mdi mdi-table-eye menu-icon"></i>
                 <span class="menu-title">Hakkında</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/Message/MessageList">
-                <i class="mdi mdi-table-large menu-icon"></i>
-                <span class="menu-title">-Mesajlar</span>
+                <i class="mdi mdi-table-edit menu-icon"></i>
+                <span class="menu-title">Mesajlar</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/Notification/NotificationList">
-                <i class="mdi mdi-table-large menu-icon"></i>
+                <i class="mdi mdi-table-plus menu-icon"></i>
                 <span class="menu-title">Bildirimler</span>
             </a>
         </li>
 
-        <ul class="mt-4 pl-0">
-            <li>Sign Out</li>
-        </ul>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("AdminLogout", "Login")">
+                <i class="mdi mdi-table-remove menu-icon"></i>
+                <span class="menu-title">Çıkış Yap</span>
+            </a>
+        </li>
     </ul>
 </nav>

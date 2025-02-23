@@ -29,5 +29,22 @@ namespace AgencyWebSite.Controllers
             
             return View();
         }
+
+        public ActionResult StaffData()
+        {
+            var values = agContext.Teams.ToList();
+            return PartialView(values);
+        }
+
+        public ActionResult LastMessages()
+        {
+            var values = agContext.Messages.OrderByDescending(x => x.MessageId).Take(5).ToList();
+            return PartialView(values);
+        }
+
+        public ActionResult BusinessSurvey()
+        {
+            return PartialView();
+        }
     }
 }

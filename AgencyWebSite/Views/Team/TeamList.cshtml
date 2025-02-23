@@ -32,7 +32,7 @@
                             <tr>
                                 <td>@count</td>
                                 <td>@item.NameSurname</td>
-                                <td><img src="@item.ImageUrl" style="width:75px; height:75px" alt="Proje Görseli" /></td>
+                                <td><img src="@item.ImageUrl" style="width:75px; height:75px" alt="Personel Görseli" /></td>
                                 <td><a class="btn btn-danger" href="/Team/DeleteTeam/@item.TeamId"><i class="fa fa-trash"></i>Sil</a></td>
                                 <td><a class="btn btn-success" href="/Team/UpdateTeam/@item.TeamId"><i class="fa fa-pencil">Güncelle</i></a></td>
                             </tr>
@@ -42,6 +42,7 @@
                 </table>
                 <br />
                 <a href="/Team/CreateTeam" class="btn btn-info"><i class="mdi mdi-file-check btn-icon-append">Personel Oluştur</i></a>
+                <a href="/SocialMedia/SocialMediaList" class="btn btn-check"><i class="mdi mdi-file-check btn-icon-append">Sosyal Medyalar Sayfası</i></a>
             </div>
         </div>
     </div>

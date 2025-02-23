@@ -22,12 +22,12 @@ namespace AgencyWebSite.Controllers
     mesajlar kısmının altına haritalardan konum bilgisi alma iframe mnrmine/kidkinder
 
     admin:
-    bildirimlerin üstündeki sayı doğru gelecek viewbag
-    mesajlar gelsin mesajın içeriği kimden geldiği
-    sidebardaki 3 yazısına gerek yok
-    sidebar tüm linkler çalışacak
-    sign out işlevli (gösterilmeyen)
-    diller kalksın
+    bildirimlerin üstündeki sayı doğru gelecek viewbag +
+    mesajlar gelsin mesajın içeriği kimden geldiği +
+    sidebardaki 3 yazısına gerek yok +
+    sidebar tüm linkler çalışacak +
+    sign out işlevli (gösterilmeyen) +
+    diller kalksın +
 
     haftaya branchlar ile team ilişkilendirilecek
     dashboardda bir tablolardan örnek çek

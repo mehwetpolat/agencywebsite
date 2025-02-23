@@ -1,0 +1,50 @@
+﻿@model AgencyWebSite.Entities.SocialMedia
+@{
+    ViewBag.Title = "CreateSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Sosyal Medya Ekleme Sayfası</h4>
+            <p class="card-description">Sosyal Medya ekleme işlemlerini buradan yapabilirsiniz.</p>
+            <form class="forms-sample" method="post">
+
+                <div class="form-group">
+                    <label for="exampleInputName3">Personel Adı</label>
+                    @Html.DropDownListFor(x => x.TeamId, (List<SelectListItem>)ViewBag.data, new { @class = "table table-bordered" })
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Twitter Url</label>
+                    <input type="text"
+                           class="form-control"
+                           id="exampleInputName1"
+                           placeholder="Twitter Adı"
+                           name="TwitterUrl" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Facebook Url</label>
+                    <input type="text"
+                           class="form-control"
+                           id="exampleInputName1"
+                           placeholder="Facebook Adı"
+                           name="FacebookUrl" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Linkedin Url</label>
+                    <input type="text"
+                           class="form-control"
+                           id="exampleInputName1"
+                           placeholder="Linkedin Adı"
+                           name="LinkedinUrl" />
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                <button type="reset" class="btn btn-light">Vazgeç</button>
+            </form>
+        </div>
+    </div>
+</div>

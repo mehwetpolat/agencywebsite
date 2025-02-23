@@ -12,5 +12,7 @@ namespace AgencyWebSite.Entities
         public string ProjectImageUrl { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
-    }
+
+        public List<ProjectDetail> ProjectDetails { get; set; }
+}
 }

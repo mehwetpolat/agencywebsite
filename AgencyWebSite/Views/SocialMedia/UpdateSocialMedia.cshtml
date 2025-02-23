@@ -1,0 +1,45 @@
+﻿@model AgencyWebSite.Entities.SocialMedia
+@{
+    ViewBag.Title = "UpdateSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Sosyal Medya Güncelleme Sayfası</h4>
+            <p class="card-description">Sosyal Medya güncelleme işlemlerini buradan yapabilirsiniz.</p>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label>Media Id</label>
+                    @Html.TextBoxFor(x => x.SocialMediaId, new { @class = "form-control" })
+                </div>
+
+
+
+                <div class="form-group">
+                    <label>Twitter Linki</label>
+                    @Html.TextBoxFor(x => x.TwitterUrl, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Facebook Linki</label>
+                    @Html.TextBoxFor(x => x.FacebookUrl, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Linkedin Linki</label>
+                    @Html.TextBoxFor(x => x.LinkedinUrl, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Personel Adı</label>
+                    @Html.DropDownListFor(x => x.TeamId, (List<SelectListItem>)ViewBag.teamId, new { @class = "table table-bordered" })
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <button type="reset" class="btn btn-light">Vazgeç</button>
+            </form>
+        </div>
+    </div>
+</div>

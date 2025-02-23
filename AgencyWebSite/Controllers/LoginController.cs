@@ -32,5 +32,13 @@ namespace AgencyWebSite.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult AdminLogout()
+        {
+            Session["username"] = null;
+            FormsAuthentication.SignOut();
+            return RedirectToAction("AdminLogin", "Login");
+        }
+
     }
 }

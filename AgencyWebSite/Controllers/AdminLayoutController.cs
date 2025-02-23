@@ -31,7 +31,9 @@ namespace AgencyWebSite.Controllers
                 .Where(x => x.UserName == userName)
                 .Select(x => x.Name + " " + x.Surname)
                 .FirstOrDefault();
-            ViewBag.profile = nameSurname;
+            ViewBag.nameSurname = nameSurname;
+
+            ViewBag.profilePhoto = context.Admins.Where(x => x.UserName == userName).Select(x => x.ImageUrl).FirstOrDefault();
             return PartialView();
         }
 
@@ -40,16 +42,29 @@ namespace AgencyWebSite.Controllers
             var userName = Session["username"];
             var nameSurname = context.Admins.Where(x => x.UserName == userName).Select
                 (x => x.Name + " " + x.Surname).FirstOrDefault();
-            ViewBag.profile = nameSurname;
+            ViewBag.nameSurname = nameSurname;
+
+            ViewBag.profilePhoto = context.Admins.Where(x => x.UserName == userName).Select(x => x.ImageUrl).FirstOrDefault();
+
             return PartialView();
         }
 
         public ActionResult NotificationPartial()
         {
+            ViewBag.notificationCount = context.Notifications.ToList().Count();
+
             var values = context.Notifications.ToList();
             return PartialView(values);
         }
         
+        public ActionResult MessagePartial()
+        {
+            ViewBag.messageCount = context.Messages.ToList().Count();
+
+            var values = context.Messages.ToList();
+            return PartialView(values);
+        }
+
         public ActionResult FooterPartial()
         {
             return PartialView();
