@@ -35,6 +35,8 @@ namespace AgencyWebSite.Controllers
     dashboardda bir tablolardan örnek çek
 
      */
+
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         AgencyContext agContext = new AgencyContext();
@@ -81,9 +83,10 @@ namespace AgencyWebSite.Controllers
             return PartialView(values);
         }
 
-        public PartialViewResult ContactPartial()
+        public PartialViewResult MessagePartial()
         {
-            return PartialView();
+            var values = agContext.Messages.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult ClientPartial()

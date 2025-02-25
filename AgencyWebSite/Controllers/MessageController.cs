@@ -3,6 +3,7 @@ using AgencyWebSite.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 
@@ -37,6 +38,20 @@ namespace AgencyWebSite.Controllers
         {
             var value = agContext.Messages.Find(id);
             return View(value);
+        }
+
+        [HttpPost]
+        public ActionResult SendMessage(Message message)
+        {
+            message.SendDate = DateTime.Now;
+            message.IsRead = false;
+
+
+            agContext.Messages.Add(message);
+            agContext.SaveChanges();
+
+            return Redirect("/Default/Index#services");
+
         }
     }
 }

@@ -9,7 +9,7 @@
 
 @Html.Partial("/Views/Default/HeadPartial.cshtml")
 
-<body id="page-top">
+<div><body id="page-top">
     <!-- Navigation-->
     @Html.Partial("/Views/Default/NavbarPartial.cshtml")
     <!-- Masthead-->
@@ -27,7 +27,7 @@
     @Html.Partial("/Views/Default/ClientPartial.cshtml")
     
     <!-- Contact-->
-    @Html.Action("ContactPartial", "Default")
+    @Html.Action("MessagePartial" , "Default")
     
     <!-- Footer-->
     @Html.Partial("/Views/Default/FooterPartial.cshtml")
@@ -38,5 +38,5 @@
     @Html.Partial("/Views/Default/JsPartial.cshtml")
 
     
-</body>
+</body></div>
 </html>
