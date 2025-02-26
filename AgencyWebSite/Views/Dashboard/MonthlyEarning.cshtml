@@ -1,0 +1,77 @@
+﻿<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-7">
+                <h5>Gelir Tablomuz</h5>
+                <p class="text-muted">
+                   Şubat Ayı Gelirleri <a class="text-muted font-weight-medium pl-2" href="#"><u>Daha Fazlası İçin</u></a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card mb-3 mb-sm-0">
+                    <div class="card-body py-3 px-4">
+                        <p class="m-0 survey-head">Bugünün Satışları</p>
+                        <div class="d-flex justify-content-between align-items-end flot-bar-wrapper">
+                            <div>
+                                <h3 class="m-0 survey-value">$@ViewBag.todaySalesRevenue</h3>
+                                <p class="text-success m-0">@ViewBag.todaySalesCount</p>
+                            </div>
+                            <div id="earningChart" class="flot-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mb-3 mb-sm-0">
+                    <div class="card-body py-3 px-4">
+                        <p class="m-0 survey-head">Şubat Ayı Satışları</p>
+                        <div class="d-flex justify-content-between align-items-end flot-bar-wrapper">
+                            <div>
+                                <h3 class="m-0 survey-value">$@ViewBag.februarySalesRevenue</h3>
+                                <p class="text-danger m-0">@ViewBag.februarySalesCount satış</p>
+                            </div>
+                            <div id="productChart" class="flot-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body py-3 px-4">
+                        <p class="m-0 survey-head">Son Bir Haftanın Satışları</p>
+                        <div class="d-flex justify-content-between align-items-end flot-bar-wrapper">
+                            <div>
+                                <h3 class="m-0 survey-value">$@ViewBag.lastWeekSalesRevenue</h3>
+                                <p class="text-danger m-0">@ViewBag.lastWeekSalesCount satış</p>
+                            </div>
+                            <div id="orderChart" class="flot-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-sm-12">
+                <div class="flot-chart-wrapper">
+                    <div id="flotChart" class="flot-chart">
+                        <canvas class="flot-base"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="text-muted mb-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. <b>Learn More</b>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <p class="mb-0 text-muted">Tüm Satışlar</p>
+                <h5 class="d-inline-block survey-value mb-0">$ @ViewBag.totalSalesRevenue Gelir</h5>
+                <p class="d-inline-block text-danger mb-0">@ViewBag.totalSalesCount Satış</p>
+            </div>
+        </div>
+    </div>
+</div>

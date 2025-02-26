@@ -12,6 +12,11 @@ namespace AgencyWebSite.Controllers
         AgencyContext agContext = new AgencyContext();
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult Board()
+        {
             ViewBag.notificationCount = agContext.Notifications.ToList().Count();
             ViewBag.projectCount = agContext.Projects.ToList().Count();
 
@@ -24,10 +29,8 @@ namespace AgencyWebSite.Controllers
             ViewBag.adminCount = agContext.Admins.ToList().Count();
 
             ViewBag.falseMessageCount = agContext.Messages.Where(x => x.IsRead == false).Count();
-            
 
-            
-            return View();
+            return PartialView();
         }
 
         public ActionResult StaffData()
@@ -45,6 +48,53 @@ namespace AgencyWebSite.Controllers
         public ActionResult BusinessSurvey()
         {
             return PartialView();
+        }
+
+        public ActionResult MonthlyEarning()
+        {
+            // toplam satış
+            ViewBag.totalSalesRevenue = agContext.Sales.Sum(x => x.SalesRevenue);
+            ViewBag.totalSalesCount = agContext.Sales.Sum(x => x.SalesCount);
+
+
+            // şubat ayı satışları
+            ViewBag.februarySalesCount = agContext.Sales.Where(x => x.SalesDate >= new DateTime(2025, 2, 1) && x.SalesDate <= new DateTime(2025, 02, 28)).Sum(x => x.SalesCount);
+            ViewBag.februarySalesRevenue = agContext.Sales.Where(x => x.SalesDate >= new DateTime(2025, 2, 1) && x.SalesDate <= new DateTime(2025, 02, 28)).Sum(x => x.SalesRevenue);
+
+
+            // son bir haftalık satış
+            var lastWeek = DateTime.Now.AddDays(-7);
+
+            var lastWeekSalesCount = agContext.Sales
+                .Where(s => s.SalesDate >= lastWeek)
+                .Sum(s => s.SalesCount);
+
+            var lastWeekSalesRevenue = agContext.Sales
+                .Where(s => s.SalesDate >= lastWeek)
+                .Sum(s => s.SalesRevenue);
+
+            ViewBag.lastWeekSalesCount = lastWeekSalesCount;
+            ViewBag.lastWeekSalesRevenue = lastWeekSalesRevenue;
+
+
+            // bugünün satışları
+            var today = DateTime.Today;
+
+            var todaySalesCount = agContext.Sales
+                .Where(s => System.Data.Entity.DbFunctions.TruncateTime(s.SalesDate) == today)
+                .Sum(s => (int?)s.SalesCount ?? 0);
+
+            var todaySalesRevenue = agContext.Sales
+                .Where(s => System.Data.Entity.DbFunctions.TruncateTime(s.SalesDate) == today)
+                .Sum(s => (decimal?)s.SalesRevenue ?? 0);
+
+            ViewBag.todaySalesCount = todaySalesCount;
+            ViewBag.todaySalesRevenue = todaySalesRevenue;
+
+
+
+            var values = agContext.Sales.ToList();
+            return PartialView(values);
         }
     }
 }

@@ -128,12 +128,24 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\AgencyContext.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\BranchController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\FeatureController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ProjectDetailController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\SocialMediaController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Branch.cs" />
@@ -143,7 +155,9 @@
     <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\ProjectDetail.cs" />
+    <Compile Include="Entities\Sales.cs" />
     <Compile Include="Entities\Service.cs" />
+    <Compile Include="Entities\SocialMedia.cs" />
     <Compile Include="Entities\Team.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,6 +189,38 @@
     <Compile Include="Migrations\202502131815126_adminmigupdate.cs" />
     <Compile Include="Migrations\202502131815126_adminmigupdate.designer.cs">
       <DependentUpon>202502131815126_adminmigupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502201840352_projectdb_detaildb_editrelation.cs" />
+    <Compile Include="Migrations\202502201840352_projectdb_detaildb_editrelation.designer.cs">
+      <DependentUpon>202502201840352_projectdb_detaildb_editrelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502201902095_projectdb_detaildb_edited.cs" />
+    <Compile Include="Migrations\202502201902095_projectdb_detaildb_edited.designer.cs">
+      <DependentUpon>202502201902095_projectdb_detaildb_edited.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502221031212_adminimageurl.cs" />
+    <Compile Include="Migrations\202502221031212_adminimageurl.designer.cs">
+      <DependentUpon>202502221031212_adminimageurl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502221136585_reamandbranchrelation.cs" />
+    <Compile Include="Migrations\202502221136585_reamandbranchrelation.designer.cs">
+      <DependentUpon>202502221136585_reamandbranchrelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502221150162_teamandsocialmedia_relation.cs" />
+    <Compile Include="Migrations\202502221150162_teamandsocialmedia_relation.designer.cs">
+      <DependentUpon>202502221150162_teamandsocialmedia_relation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502221155435_socialmedia.cs" />
+    <Compile Include="Migrations\202502221155435_socialmedia.designer.cs">
+      <DependentUpon>202502221155435_socialmedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502232034478_aboutupdate.cs" />
+    <Compile Include="Migrations\202502232034478_aboutupdate.designer.cs">
+      <DependentUpon>202502232034478_aboutupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502261110558_salestable_create.cs" />
+    <Compile Include="Migrations\202502261110558_salestable_create.designer.cs">
+      <DependentUpon>202502261110558_salestable_create.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -296,6 +342,7 @@
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_7.jpg" />
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_8.jpg" />
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_9.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\connection.gif" />
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\circle.png" />
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\circle.svg" />
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\Group 4.jpg" />
@@ -1145,6 +1192,8 @@
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\sprites\jsgrid-icons.png" />
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\sprites\red.png" />
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\sprites\yellow.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\ws.jpeg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\yz.jpeg" />
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\chart.js" />
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\codeEditor.js" />
     <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\codemirror.js" />
@@ -2198,6 +2247,53 @@
     <Content Include="Views\AdminLayout\FooterPartial.cshtml" />
     <Content Include="Views\AdminLayout\JsPartial.cshtml" />
     <Content Include="Views\Project\UpdateProject.cshtml" />
+    <Content Include="Views\About\AboutList.cshtml" />
+    <Content Include="Views\About\CreateAbout.cshtml" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
+    <Content Include="Views\Feature\FeatureList.cshtml" />
+    <Content Include="Views\Feature\CreateFeature.cshtml" />
+    <Content Include="Views\Feature\UpdateFeature.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Default\ProjectPartial.cshtml" />
+    <Content Include="Views\Default\ModalDetailPartial.cshtml" />
+    <Content Include="Views\Admin\AdminList.cshtml" />
+    <Content Include="Views\Admin\CreateAdmin.cshtml" />
+    <Content Include="Views\Admin\UpdateAdmin.cshtml" />
+    <Content Include="Views\Branch\BranchList.cshtml" />
+    <Content Include="Views\Branch\CreateBranch.cshtml" />
+    <Content Include="Views\Branch\UpdateBranch.cshtml" />
+    <Content Include="Views\Message\MessageList.cshtml" />
+    <Content Include="Views\Message\MessageDetail.cshtml" />
+    <Content Include="Views\Notification\NotificationList.cshtml" />
+    <Content Include="Views\Category\CategoryList.cshtml" />
+    <Content Include="Views\Category\CreateCategory.cshtml" />
+    <Content Include="Views\Category\UpdateCategory.cshtml" />
+    <Content Include="Views\ProjectDetail\ProjectDetailList.cshtml" />
+    <Content Include="Views\ProjectDetail\CreateProjectDetail.cshtml" />
+    <Content Include="Views\ProjectDetail\UpdateProjectDetail.cshtml" />
+    <Content Include="Views\Team\TeamList.cshtml" />
+    <Content Include="Views\Team\CreateTeam.cshtml" />
+    <Content Include="Views\Team\UpdateTeam.cshtml" />
+    <Content Include="Views\AdminLayout\MessagePartial.cshtml" />
+    <Content Include="Views\SocialMedia\SocialMediaList.cshtml" />
+    <Content Include="Views\SocialMedia\CreateSocialMedia.cshtml" />
+    <Content Include="Views\SocialMedia\UpdateSocialMedia.cshtml" />
+    <Content Include="Views\Dashboard\StaffData.cshtml" />
+    <Content Include="Views\Dashboard\LastMessages.cshtml" />
+    <Content Include="Views\Dashboard\BusinessSurvey.cshtml" />
+    <Content Include="Views\Default\HeadPartial.cshtml" />
+    <Content Include="Views\Default\FooterPartial.cshtml" />
+    <Content Include="Views\Default\JsPartial.cshtml" />
+    <Content Include="Views\Default\NavbarPartial.cshtml" />
+    <Content Include="Views\Default\MastheadPartial.cshtml" />
+    <Content Include="Views\Default\ServicePartial.cshtml" />
+    <Content Include="Views\Default\AboutPartial.cshtml" />
+    <Content Include="Views\Default\TeamPartial.cshtml" />
+    <Content Include="Views\Default\ClientPartial.cshtml" />
+    <Content Include="Views\Default\MessagePartial.cshtml" />
+    <Content Include="Views\Dashboard\MonthlyEarning.cshtml" />
+    <Content Include="Views\Dashboard\Board.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2257,6 +2353,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502131815126_adminmigupdate.resx">
       <DependentUpon>202502131815126_adminmigupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502201840352_projectdb_detaildb_editrelation.resx">
+      <DependentUpon>202502201840352_projectdb_detaildb_editrelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502201902095_projectdb_detaildb_edited.resx">
+      <DependentUpon>202502201902095_projectdb_detaildb_edited.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502221031212_adminimageurl.resx">
+      <DependentUpon>202502221031212_adminimageurl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502221136585_reamandbranchrelation.resx">
+      <DependentUpon>202502221136585_reamandbranchrelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502221150162_teamandsocialmedia_relation.resx">
+      <DependentUpon>202502221150162_teamandsocialmedia_relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502221155435_socialmedia.resx">
+      <DependentUpon>202502221155435_socialmedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502232034478_aboutupdate.resx">
+      <DependentUpon>202502232034478_aboutupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502261110558_salestable_create.resx">
+      <DependentUpon>202502261110558_salestable_create.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

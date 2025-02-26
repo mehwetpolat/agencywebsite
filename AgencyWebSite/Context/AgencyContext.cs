@@ -21,6 +21,7 @@ namespace AgencyWebSite.Context
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Branch> Branchs { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
+        public DbSet<Sales> Sales { get; set; }
         
         
     }

@@ -40,18 +40,6 @@ namespace AgencyWebSite.Controllers
             return View(value);
         }
 
-        [HttpPost]
-        public ActionResult SendMessage(Message message)
-        {
-            message.SendDate = DateTime.Now;
-            message.IsRead = false;
-
-
-            agContext.Messages.Add(message);
-            agContext.SaveChanges();
-
-            return Redirect("/Default/Index#services");
-
-        }
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AgencyWebSite.Context;
+using AgencyWebSite.Entities;
 using AgencyWebSite.Migrations;
 using Microsoft.Ajax.Utilities;
 using System;
@@ -13,15 +14,15 @@ namespace AgencyWebSite.Controllers
     /* 
     ui:
     navbar yapılacak 
-    partiallara ayrılacak veriler dinamik
-    takımları haftaya dedi ama sen yap
-    clients static gelsin markalar
-    mesajlar aktif
-    alt footerde sosyal medya sitelerinin ana sayfasına yön ver
-    hakkında kısmı düzgün gelsin gptden metin çıkar
-    sol üstteki logo
-    eklenen son 3 hizmeti listele
-    mesajlar kısmının altına haritalardan konum bilgisi alma iframe mnrmine/kidkinder
+    partiallara ayrılacak veriler dinamik +
+    takımları haftaya dedi ama sen yap +
+    clients static gelsin markalar +
+    mesajlar aktif +
+    alt footerde sosyal medya sitelerinin ana sayfasına yön ver +
+    hakkında kısmı düzgün gelsin gptden metin çıkar +
+    sol üstteki logo -
+    eklenen son 3 hizmeti listele +
+    mesajlar kısmının altına haritalardan konum bilgisi alma iframe mnrmine/kidkinder +
 
     admin:
     bildirimlerin üstündeki sayı doğru gelecek viewbag +
@@ -31,12 +32,11 @@ namespace AgencyWebSite.Controllers
     sign out işlevli (gösterilmeyen) +
     diller kalksın +
 
-    haftaya branchlar ile team ilişkilendirilecek
-    dashboardda bir tablolardan örnek çek
+    haftaya branchlar ile team ilişkilendirilecek +
+    dashboardda bir tablolardan örnek çek +
 
      */
 
-    [AllowAnonymous]
     public class DefaultController : Controller
     {
         AgencyContext agContext = new AgencyContext();
@@ -83,10 +83,31 @@ namespace AgencyWebSite.Controllers
             return PartialView(values);
         }
 
+
         public PartialViewResult MessagePartial()
         {
             var values = agContext.Messages.ToList();
             return PartialView(values);
+        }
+
+        [HttpPost]
+        public ActionResult SendMessage(Message message)
+        {
+            if (message.NameSurname != null && message.Title != null && message.Email != null && message.Description != null)
+            {
+                message.SendDate = DateTime.Now;
+                message.IsRead = false;
+                agContext.Messages.Add(message);
+                agContext.SaveChanges();
+
+                TempData["successMessage"] = "Mesajınız Başarı İle Gönderildi";
+
+            }
+            else
+            {
+                TempData["errorMessage"] = "Mesajınız Gönderilemedi";
+            }
+            return Redirect("/Default/Index#contact");
         }
 
         public PartialViewResult ClientPartial()

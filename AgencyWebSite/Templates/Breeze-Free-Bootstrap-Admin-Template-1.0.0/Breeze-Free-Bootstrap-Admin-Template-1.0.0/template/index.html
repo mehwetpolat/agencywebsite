@@ -1,13 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
-@Html.Partial("/Views/AdminLayout/HeadPartial.cshtml")
-
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Breeze Admin</title>
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css" />
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+</head>
 <body>
     <div class="container-scroller">
-
-        @Html.Action("SidebarPartial", "AdminLayout")
-
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <div class="text-center sidebar-brand-wrapper d-flex align-items-center">
+                <a class="sidebar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo-mini pl-4 pt-3" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+            </div>
+            <ul class="nav">
+                <li class="nav-item nav-profile">
+                    <a href="#" class="nav-link">
+                        <div class="nav-profile-image">
+                            <img src="assets/images/faces/face1.jpg" alt="profile" />
+                            <span class="login-status online"></span>
+                            <!--change to offline or busy as needed-->
+                        </div>
+                        <div class="nav-profile-text d-flex flex-column pr-3">
+                            <span class="font-weight-medium mb-2">Henry Klein</span>
+                            <span class="font-weight-normal">$8,753.00</span>
+                        </div>
+                        <span class="badge badge-danger text-white ml-3 rounded">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="mdi mdi-home menu-icon"></i>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                        <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        <span class="menu-title">Basic UI Elements</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-basic">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/icons/mdi.html">
+                        <i class="mdi mdi-contacts menu-icon"></i>
+                        <span class="menu-title">Icons</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/forms/basic_elements.html">
+                        <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                        <span class="menu-title">Forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/charts/chartjs.html">
+                        <i class="mdi mdi-chart-bar menu-icon"></i>
+                        <span class="menu-title">Charts</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/tables/basic-table.html">
+                        <i class="mdi mdi-table-large menu-icon"></i>
+                        <span class="menu-title">Tables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link" href="#">
+                        <span class="menu-title">Docs</span>
+                    </span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.bootstrapdash.com/demo/breeze-free/documentation/documentation.html">
+                        <i class="mdi mdi-file-document-box menu-icon"></i>
+                        <span class="menu-title">Documentation</span>
+                    </a>
+                </li>
+                <li class="nav-item sidebar-actions">
+                    <div class="nav-link">
+                        <div class="mt-4">
+                            <div class="border-none">
+                                <p class="text-black">Notification</p>
+                            </div>
+                            <ul class="mt-4 pl-0">
+                                <li>Sign Out</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
         <div class="container-fluid page-body-wrapper">
             <div id="theme-settings" class="settings-panel">
                 <i class="settings-close mdi mdi-close"></i>
@@ -26,7 +128,7 @@
             </div>
             <nav class="navbar col-lg-12 col-12 p-lg-0 fixed-top d-flex flex-row">
                 <div class="navbar-menu-wrapper d-flex align-items-stretch justify-content-between">
-                    <a class="navbar-brand brand-logo-mini align-self-center d-lg-none" href="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini align-self-center d-lg-none" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
                     <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
                         <i class="mdi mdi-menu"></i>
                     </button>
@@ -40,7 +142,7 @@
                                 <h6 class="p-3 mb-0">Notifications</h6>
                                 <a class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
-                                        <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face4.jpg" alt="" class="profile-pic" />
+                                        <img src="assets/images/faces/face4.jpg" alt="" class="profile-pic" />
                                     </div>
                                     <div class="preview-item-content">
                                         <p class="mb-0">
@@ -50,7 +152,7 @@
                                 </a>
                                 <a class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
-                                        <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face3.jpg" alt="" class="profile-pic" />
+                                        <img src="assets/images/faces/face3.jpg" alt="" class="profile-pic" />
                                     </div>
                                     <div class="preview-item-content">
                                         <p class="mb-0">
@@ -60,7 +162,7 @@
                                 </a>
                                 <a class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
-                                        <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face2.jpg" alt="" class="profile-pic" />
+                                        <img src="assets/images/faces/face2.jpg" alt="" class="profile-pic" />
                                     </div>
                                     <div class="preview-item-content">
                                         <p class="mb-0">
@@ -130,7 +232,7 @@
                         </li>
                         <li class="nav-item nav-profile dropdown border-0">
                             <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown">
-                                <img class="nav-profile-img mr-2" alt="" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face1.jpg" />
+                                <img class="nav-profile-img mr-2" alt="" src="assets/images/faces/face1.jpg" />
                                 <span class="profile-name">Henry Klein</span>
                             </a>
                             <div class="dropdown-menu navbar-dropdown w-100" aria-labelledby="profileDropdown">
@@ -335,7 +437,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex align-items-center">
-                                                            <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face1.jpg" alt="image" />
+                                                            <img src="assets/images/faces/face1.jpg" alt="image" />
                                                             <div class="table-user-name ml-3">
                                                                 <p class="mb-0 font-weight-medium"> Cecelia Cooper </p>
                                                                 <small> Payment on hold</small>
@@ -351,7 +453,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex align-items-center">
-                                                            <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face10.jpg" alt="image" />
+                                                            <img src="assets/images/faces/face10.jpg" alt="image" />
                                                             <div class="table-user-name ml-3">
                                                                 <p class="mb-0 font-weight-medium"> Victor Watkins </p>
                                                                 <small>Email verified</small>
@@ -367,7 +469,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex align-items-center">
-                                                            <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face11.jpg" alt="image" />
+                                                            <img src="assets/images/faces/face11.jpg" alt="image" />
                                                             <div class="table-user-name ml-3">
                                                                 <p class="mb-0 font-weight-medium"> Ada Burgess </p>
                                                                 <small>Email verified</small>
@@ -383,7 +485,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex align-items-center">
-                                                            <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face13.jpg" alt="image" />
+                                                            <img src="assets/images/faces/face13.jpg" alt="image" />
                                                             <div class="table-user-name ml-3">
                                                                 <p class="mb-0 font-weight-medium"> Dollie Lynch </p>
                                                                 <small>Email verified</small>
@@ -399,7 +501,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex align-items-center">
-                                                            <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face16.jpg" alt="image" />
+                                                            <img src="assets/images/faces/face16.jpg" alt="image" />
                                                             <div class="table-user-name ml-3">
                                                                 <p class="mb-0 font-weight-medium"> Harry Holloway </p>
                                                                 <small>Payment on process</small>
@@ -514,7 +616,7 @@
                                         <div class="col-12 col-sm-7">
                                             <div class="row">
                                                 <div class="col-4 col-md-4">
-                                                    <img class="customer-img" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face22.jpg" alt="" />
+                                                    <img class="customer-img" src="assets/images/faces/face22.jpg" alt="" />
                                                 </div>
                                                 <div class="col-8 col-md-8 p-sm-0">
                                                     <h6 class="mb-0">Cecelia Cooper</h6>
@@ -530,7 +632,7 @@
                                         <div class="col-sm-7">
                                             <div class="row">
                                                 <div class="col-4 col-sm-4">
-                                                    <img class="customer-img" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face25.jpg" alt="" />
+                                                    <img class="customer-img" src="assets/images/faces/face25.jpg" alt="" />
                                                 </div>
                                                 <div class="col-8 col-sm-8 p-sm-0">
                                                     <h6 class="mb-0">Victor Watkins</h6>
@@ -546,7 +648,7 @@
                                         <div class="col-sm-7">
                                             <div class="row">
                                                 <div class="col-4 col-sm-4">
-                                                    <img class="customer-img" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face15.jpg" alt="" />
+                                                    <img class="customer-img" src="assets/images/faces/face15.jpg" alt="" />
                                                 </div>
                                                 <div class="col-8 col-sm-8 p-sm-0">
                                                     <h6 class="mb-0">Ada Burgess</h6>
@@ -562,7 +664,7 @@
                                         <div class="col-sm-7">
                                             <div class="row">
                                                 <div class="col-4 col-sm-4">
-                                                    <img class="customer-img" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face5.jpg" alt="" />
+                                                    <img class="customer-img" src="assets/images/faces/face5.jpg" alt="" />
                                                 </div>
                                                 <div class="col-8 col-sm-8 p-sm-0">
                                                     <h6 class="mb-0">Dollie Lynch</h6>
@@ -578,7 +680,7 @@
                                         <div class="col-sm-7">
                                             <div class="row">
                                                 <div class="col-4 col-sm-4">
-                                                    <img class="customer-img" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face2.jpg" alt="" />
+                                                    <img class="customer-img" src="assets/images/faces/face2.jpg" alt="" />
                                                 </div>
                                                 <div class="col-8 col-sm-8 p-sm-0">
                                                     <h6 class="mb-0">Harry Holloway</h6>
@@ -602,7 +704,7 @@
                                     <div class="row border-bottom pb-3 pt-4 align-items-center mx-0">
                                         <div class="col-sm-9 pl-0">
                                             <div class="d-flex">
-                                                <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/dashboard/img_4.jpg" alt="" />
+                                                <img src="assets/images/dashboard/img_4.jpg" alt="" />
                                                 <div class="pl-2">
                                                     <h6 class="m-0">Red Chair</h6>
                                                     <p class="m-0">Home Decoration</p>
@@ -616,7 +718,7 @@
                                     <div class="row py-3 align-items-center mx-0">
                                         <div class="col-sm-9 pl-0">
                                             <div class="d-flex">
-                                                <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/dashboard/img_5.jpg" alt="" />
+                                                <img src="assets/images/dashboard/img_5.jpg" alt="" />
                                                 <div class="pl-2">
                                                     <h6 class="m-0">Gray Sofa</h6>
                                                     <p class="m-0">Home Decoration</p>
@@ -728,9 +830,9 @@
                                                 <span>2h ago</span>
                                                 <span class="d-inline-block">
                                                     <span class="d-flex d-inline-block">
-                                                        <img class="ml-1" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face1.jpg" alt="" />
-                                                        <img class="ml-1" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face10.jpg" alt="" />
-                                                        <img class="ml-1" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face14.jpg" alt="" />
+                                                        <img class="ml-1" src="assets/images/faces/face1.jpg" alt="" />
+                                                        <img class="ml-1" src="assets/images/faces/face10.jpg" alt="" />
+                                                        <img class="ml-1" src="assets/images/faces/face14.jpg" alt="" />
                                                     </span>
                                                 </span>
                                             </p>
@@ -760,7 +862,7 @@
                                             <div class="col-7 col-sm-8">
                                                 <div class="row align-items-center">
                                                     <div class="col-sm-4">
-                                                        <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face2.jpg" alt="" />
+                                                        <img src="assets/images/faces/face2.jpg" alt="" />
                                                     </div>
                                                     <div class="col-sm-8 pr-0 pl-sm-0">
                                                         <span>06 Jan 2019</span>
@@ -824,7 +926,7 @@
                                             <div class="col-7 col-sm-8">
                                                 <div class="row align-items-center">
                                                     <div class="col-sm-4">
-                                                        <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face11.jpg" alt="" />
+                                                        <img src="assets/images/faces/face11.jpg" alt="" />
                                                     </div>
                                                     <div class="col-sm-8 pr-0 pl-sm-0">
                                                         <span>10 Apr 2019</span>
@@ -856,7 +958,7 @@
                                             <div class="col-7 col-sm-8">
                                                 <div class="row align-items-center">
                                                     <div class="col-sm-4">
-                                                        <img src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/faces/face3.jpg" alt="" />
+                                                        <img src="assets/images/faces/face3.jpg" alt="" />
                                                     </div>
                                                     <div class="col-sm-8 pr-0 pl-sm-0">
                                                         <span>18 Mar 2019</span>
@@ -904,7 +1006,7 @@
                                         <div class="col-sm-12">
                                             <div class="d-flex justify-content-between pb-3 border-bottom">
                                                 <div>
-                                                    <img class="mr-2" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/browser-logo/opera-logo.png" alt="" />
+                                                    <img class="mr-2" src="assets/images/browser-logo/opera-logo.png" alt="" />
                                                     <span class="p">opera mini</span>
                                                 </div>
                                                 <p class="mb-0">23%</p>
@@ -915,7 +1017,7 @@
                                         <div class="col-sm-12">
                                             <div class="d-flex justify-content-between pb-3 border-bottom">
                                                 <div>
-                                                    <img class="mr-2" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/browser-logo/safari-logo.png" alt="" />
+                                                    <img class="mr-2" src="assets/images/browser-logo/safari-logo.png" alt="" />
                                                     <span class="p">Safari</span>
                                                 </div>
                                                 <p class="mb-0">07%</p>
@@ -926,7 +1028,7 @@
                                         <div class="col-sm-12">
                                             <div class="d-flex justify-content-between pb-3 border-bottom">
                                                 <div>
-                                                    <img class="mr-2" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/browser-logo/chrome-logo.png" alt="" />
+                                                    <img class="mr-2" src="assets/images/browser-logo/chrome-logo.png" alt="" />
                                                     <span class="p">Chrome</span>
                                                 </div>
                                                 <p class="mb-0">33%</p>
@@ -937,7 +1039,7 @@
                                         <div class="col-sm-12">
                                             <div class="d-flex justify-content-between pb-3 border-bottom">
                                                 <div>
-                                                    <img class="mr-2" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/browser-logo/firefox-logo.png" alt="" />
+                                                    <img class="mr-2" src="assets/images/browser-logo/firefox-logo.png" alt="" />
                                                     <span class="p">Firefox</span>
                                                 </div>
                                                 <p class="mb-0">17%</p>
@@ -948,7 +1050,7 @@
                                         <div class="col-sm-12">
                                             <div class="d-flex justify-content-between">
                                                 <div>
-                                                    <img class="mr-2" src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/images/browser-logo/explorer-logo.png" alt="" />
+                                                    <img class="mr-2" src="assets/images/browser-logo/explorer-logo.png" alt="" />
                                                     <span class="p">Explorer</span>
                                                 </div>
                                                 <p class="mb-0">05%</p>
@@ -974,25 +1076,25 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/vendors/chart.js/Chart.min.js"></script>
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/vendors/flot/jquery.flot.js"></script>
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/vendors/flot/jquery.flot.resize.js"></script>
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/vendors/flot/jquery.flot.categories.js"></script>
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/vendors/flot/jquery.flot.fillbetween.js"></script>
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/vendors/flot/jquery.flot.stack.js"></script>
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/vendors/flot/jquery.flot.pie.js"></script>
+    <script src="assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="assets/vendors/flot/jquery.flot.js"></script>
+    <script src="assets/vendors/flot/jquery.flot.resize.js"></script>
+    <script src="assets/vendors/flot/jquery.flot.categories.js"></script>
+    <script src="assets/vendors/flot/jquery.flot.fillbetween.js"></script>
+    <script src="assets/vendors/flot/jquery.flot.stack.js"></script>
+    <script src="assets/vendors/flot/jquery.flot.pie.js"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/js/off-canvas.js"></script>
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/js/hoverable-collapse.js"></script>
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/js/misc.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script src="/Templates/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/js/dashboard.js"></script>
+    <script src="assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
 </body>
 </html>

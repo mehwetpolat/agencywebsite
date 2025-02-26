@@ -95,3 +95,5 @@ C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyW
 C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.reamandbranchrelation.resources
 C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.teamandsocialmedia_relation.resources
 C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.socialmedia.resources
+C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.aboutupdate.resources
+C:\Users\mehmet\Desktop\Projelerim\AgencyWebSite\AgencyWebSite\obj\Debug\AgencyWebSite.Migrations.salestable_create.resources
